@@ -36,7 +36,7 @@ for x in range(int(last_page)):
     if next_url:
         nextp_url = next_url[0].attrs['href']
 
-#http request on the next page of thread --- error here!
+#http request on the next page of thread
     r = requests.get(nextp_url)
 
 #extract data of the next page of thread
