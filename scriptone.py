@@ -10,10 +10,10 @@ data = []
 
 for item in my_urls:
 
-#http request
+    #http request
     r = requests.get(item)
 
-#extract data from html
+    #extract data from html
     soup = BeautifulSoup(r.content, 'html.parser')
 
     #find last page number for the loop
@@ -28,7 +28,7 @@ for item in my_urls:
 
         articles = soup.findAll("article")
 
-    #find the comment, username, and datetime and save them in data
+        #find the comment, username, and datetime and save them in data
         for article in articles:
             comment_elem = article.find(attrs={"data-role" : "commentContent"})
             text = '\n'.join(_.text for _ in comment_elem.findAll('p'))
@@ -40,15 +40,15 @@ for item in my_urls:
                'timestamp': time.strip()
             })
 
-    #get next page url
+        #get next page url
         next_url = soup.findAll('a', attrs={'rel': 'next'})
         if next_url:
             nextp_url = next_url[0].attrs['href']
 
-    #http request on the next page of thread --- error here!
+        #http request on the next page of thread --- error here!
         r = requests.get(nextp_url)
 
-    #extract data of the next page of thread
+        #extract data of the next page of thread
         soup = BeautifulSoup(r.content, 'html.parser')
 
 #export data to a json file
