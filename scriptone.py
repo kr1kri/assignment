@@ -34,10 +34,10 @@ for x in range(int(last_page)):
 #get next page url
     next_url = soup.findAll('a', attrs={'rel': 'next'})
     if next_url:
-        url = next_url[0].attrs['href']
+        nextp_url = next_url[0].attrs['href']
 
 #http request on the next page of thread --- error here!
-    r = requests.get(url)
+    r = requests.get(nextp_url)
 
 #extract data of the next page of thread
     soup = BeautifulSoup(r.content, 'html.parser')
