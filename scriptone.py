@@ -11,7 +11,7 @@ data = []
 for item in my_urls:
 
 #http request
-    r = requests.get(       item)
+    r = requests.get(item)
 
 #extract data from html
     soup = BeautifulSoup(r.content, 'html.parser')
