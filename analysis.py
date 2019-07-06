@@ -1,5 +1,6 @@
 import json
 import os
+import re
 import matplotlib.pyplot as plt
 from wordcloud import WordCloud, STOPWORDS, ImageColorGenerator
 import numpy
@@ -13,14 +14,13 @@ comments = []
 for item in data:
     comments.append(item["text"])
 
-with open('gr_stopwords.txt') as f:
-    for line in f:
-        line = line.strip()
-        mystopwords.append(line)
+texts = '\n'.join(comments)
 
+with open('gr_stopwords.txt') as f:
+    mystopwords = f.read().splitlines()
 
 wordcloud = WordCloud(max_font_size=40, relative_scaling=0.5, stopwords=mystopwords,
-                      background_color="white").generate(" ".join(comments))
+                      background_color="white").generate(texts)
 
 plt.figure()
 plt.imshow(wordcloud, interpolation='bilinear')
