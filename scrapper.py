@@ -35,8 +35,8 @@ for item in my_urls:
             username = article.find(attrs={"class": "ipsType_break"}).text
             time = article.find('time').attrs['datetime']
             data.append({
-               'text': text.strip(),
-               'username': username.strip(),
+               'text': re.sub(r"[\n\t]*", "", text),
+               'username': re.sub(r"[ \t\n]*", "", username),
                'timestamp': time.strip()
             })
 
@@ -45,7 +45,7 @@ for item in my_urls:
         if next_url:
             nextp_url = next_url[0].attrs['href']
 
-        #http request on the next page of thread --- error here!
+        #http request on the next page of thread
         r = requests.get(nextp_url)
 
         #extract data of the next page of thread
