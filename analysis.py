@@ -1,29 +1,36 @@
 import json
 import os
-import re
 import matplotlib.pyplot as plt
-from wordcloud import WordCloud, STOPWORDS, ImageColorGenerator
+from wordcloud import WordCloud, STOPWORDS
 import numpy
 
-
+#read the dataset
 with open('file.json') as f:
     data = json.load(f)
 
-comments = []
+categories = ["text", "username"]
 
-for item in data:
-    comments.append(item["text"])
+#create stopwords for wordcloud
+mystopwords = []
 
-texts = '\n'.join(comments)
-
+#pass the text of gr_stopwords as stopwords for wordcloud
 with open('gr_stopwords.txt') as f:
     mystopwords = f.read().splitlines()
 
-wordcloud = WordCloud(max_font_size=40, relative_scaling=0.5, stopwords=mystopwords,
-                      background_color="white").generate(texts)
+#create wordclouds
+for x in range(len(categories)):
+    column = []
 
-plt.figure()
-plt.imshow(wordcloud, interpolation='bilinear')
-plt.axis("off")
-plt.savefig("wordcloud.png")
+    for item in data:
+        column.append(item[categories[x]])
+
+    text = '\n'.join(column)
+
+    wordcloud = WordCloud(width=1600, height=800, stopwords=mystopwords, background_color="white").generate(text)
+
+    plt.figure(figsize=(20, 10))
+    plt.imshow(wordcloud, interpolation="bilinear")
+    plt.axis("off")
+    plt.savefig("wordcloud" + categories[x] + ".png")
+
 
