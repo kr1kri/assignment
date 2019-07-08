@@ -19,7 +19,18 @@ The first thing I decided to do, was to search and find a way to collect the dat
 At first, I scrapped the urls with the ‘requests’ library, and then I extracted the data of the given URLs with the use of 'BeautifulSoup'.
 Since I was asked to create a dataset with the messages, the usernames and the timestamps of the threads, I used the Mozilla Firefox Inspector tool to find the exact point of the HTML file I should select to find what was required. What I found was that the data I was looking for were inside an 'article' class. More specifically, the attributes I searched for comments were {"data-role" : "commentContent"}, for usernames were {"class": "ipsType_break"} and for timestamps was {'datetime'}.
 Using a loop from the first to the last page of every thread, I stored all those values to a Python Dictionary with the labels ‘text’, ‘username’ and ‘timestamp’. And finally I extracted this dictionary to a JSON file so I could easier manipulate my dataset.
-The above procedure is on the (/assignment/scrapper.py) file.
+The above procedure is on the scrapper.py file.
+
+### Part-2.
+
+In the second part, a NLP or statistical analysis should be done on the dataset I had scrapped from the first part.
+At first, I searched for some modules and techniques to perform statistical analysis on the dataset. I thought about an analysis that would show the most used words in the users’ messages and the users who had participated most in those two forum threads, so I decided
+to use the WordCloud module.
+For the creation of a wordcloud, I had to insert from my JSON file the exact data I wanted to use into a python list and then convert this list to a string type variable. Subsequently, I passed a text file of the words I did not want to appear in my statistical analysis and I set it as STOPWORDS in the WordCloud.
+
+The first WordCloud I created shows the words that appear most in the users’ comments:
+
+!(assignment/wordcloud_text.png)
 
 ## Author
 
