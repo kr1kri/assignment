@@ -4,10 +4,10 @@ The purpose of this task was to design a procedure to extract the content from t
 
 ## Used Tools/Technologies
 
-Python 3.6 
-requests 
-pandas 
-WordCloud
+Python 3.6  
+requests  
+pandas  
+WordCloud 
 matplotlib
 
 ## Implementation
