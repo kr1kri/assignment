@@ -30,7 +30,7 @@ For the creation of a wordcloud, I had to insert from my JSON file the exact dat
 
 The first WordCloud I created shows the words that appear most in the users’ comments:
 
-!(assignment/wordcloud_text.png)
+@wordcloud_text.png
 
 ## Author
 
