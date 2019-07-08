@@ -35,7 +35,8 @@ for x in range (len(categories)):
     plt.savefig("wordcloud_" + categories[x] + ".png")
 
 #initialize a dataframe with the publish timespamp
-df = pd.DataFrame([[pd.to_datetime(x['timestamp']),i] for i,x in enumerate(data)], columns=['timespamp', 'id'])
+df = pd.DataFrame([[pd.to_datetime(x['timestamp'])] for x in data], columns=['timespamp'])
+df['id'] = range(df.shape[0])
 
 #group by year and month in order to visualize the distribution of the publish date
 ax = df.groupby([df["timespamp"].dt.year, df["timespamp"].dt.month, df["timespamp"].dt.day])['id'].count().plot(title='Publish Date Distribution')
@@ -50,6 +51,5 @@ ax.set_ylabel("number of posts")
 ax.set_xlabel("hour of day")
 
 plt.savefig("publish_time.png")
-
 
 
