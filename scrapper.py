@@ -1,6 +1,7 @@
 #import modules
 import requests
 import json
+import re
 from bs4 import BeautifulSoup
 
 #list with the ulrs to scrap
@@ -19,8 +20,8 @@ for item in my_urls:
     #find last page number for the loop
     last_url = soup.findAll('a', attrs={'rel': 'last'})
     if last_url:
-      last_page = last_url[0].attrs['data-page']
-      print (last_page)
+        last_page = last_url[0].attrs['data-page']
+        print (last_page)
 
 
     #loop from the first to last page of the thread
@@ -45,7 +46,7 @@ for item in my_urls:
         if next_url:
             nextp_url = next_url[0].attrs['href']
 
-        #http request on the next page of thread
+        #http request on the next page of thread --- error here!
         r = requests.get(nextp_url)
 
         #extract data of the next page of thread
