@@ -2,3 +2,6 @@ requests
 bs4
 BeautifulSoup
 json
+pandas
+wordcloud
+matplotlib.pyplot
