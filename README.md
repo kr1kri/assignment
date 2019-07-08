@@ -30,7 +30,29 @@ For the creation of a wordcloud, I had to insert from my JSON file the exact dat
 
 The first WordCloud I created shows the words that appear most in the users’ comments:
 
-@wordcloud_text.png
+![wordcloud_text](https://user-images.githubusercontent.com/25890766/60817042-96028700-a1a3-11e9-82df-ea1a03b2c3f9.png)
+
+The second WordCloud I created shows the users that had participated in high frequency in the two threads of the forum:
+
+![wordcloud_username](https://user-images.githubusercontent.com/25890766/60817043-96028700-a1a3-11e9-86e7-d4920017a24d.png)
+
+Then I thought about doing some analysis on the timestamps I had scrapped. The ideas that came to my mind were, at first, using the date of each users’ message, to create a timetable that will show the number of messages posted from the day the thread opened since today. And secondly, using the time that each message was posted, I decided to create another timetable that would show the hours of the day that users were more active.
+
+After some more research, I found out that I could use the pandas DataFrames to do the above
+statistical analysis, because I could easilly group the timestamps based on day, month, year and time
+of the day.
+
+The messages’ publish date analysis from the day that the threads were created:
+
+![publish_date](https://user-images.githubusercontent.com/25890766/60817040-9569f080-a1a3-11e9-94da-06ca45f5f4f1.png)
+
+The activity of the threads in 24 hours:
+
+![publish_time](https://user-images.githubusercontent.com/25890766/60817041-9569f080-a1a3-11e9-9cac-469e0780fab7.png)
+
+The above procedure is on the analysis.py file. 
+_*notice: in order to reproduce the above visualizations, each codeblock on analysis.py should be executed
+separated in a live python console._
 
 ## Author
 
