@@ -19,7 +19,7 @@ The first thing I decided to do, was to search and find a way to collect the dat
 
 After some research on the web and specifically on GitHub, I chose to use the two Python libraries: 'requests' and 'BeautifulSoup'.  
 
-At first, I scrapped the urls with the ‘requests’ library, and then I extracted the data of the given URLs with the use of 'BeautifulSoup'.
+At first, I scrapped the URLs with the ‘requests’ library, and then I extracted the data of the given URLs with the use of 'BeautifulSoup'.
 
 Since I was asked to create a dataset with the messages, the usernames and the timestamps of the threads, I used the Mozilla Firefox Inspector tool to find the exact point of the HTML file I should select to find what was required.
 
