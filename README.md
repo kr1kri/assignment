@@ -4,9 +4,9 @@ The purpose of this task was to design a procedure to extract the content from t
 
 # Used Tools/Technologies
 
-Python 3.6
-requests
-pandas
+Python 3.6 \n
+requests \n
+pandas \n
 WordCloud
 
 # Author
