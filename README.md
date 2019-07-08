@@ -50,7 +50,7 @@ The activity of the threads in 24 hours:
 
 ![publish_time](https://user-images.githubusercontent.com/25890766/60817041-9569f080-a1a3-11e9-9cac-469e0780fab7.png)
 
-The above procedure is on the analysis.py file. 
+The above procedure is on the analysis.py file.  
 _*notice: in order to reproduce the above visualizations, each codeblock on analysis.py should be executed
 separated in a live python console._
 
