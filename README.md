@@ -10,6 +10,12 @@ pandas
 WordCloud  
 matplotlib
 ```
+## Instructions
+```
+pip install -r requirements.txt
+run scrapper.py
+```
+
 
 ## Implementation
 
